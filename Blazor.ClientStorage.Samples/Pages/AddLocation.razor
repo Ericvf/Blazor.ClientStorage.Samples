@@ -1,0 +1,22 @@
+﻿@page "/addlocation"
+<h1>Add location</h1>
+
+<EditForm Model="location" OnSubmit="FormSubmitted">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input id="txtDate" type="text" required @bind-value="location.name" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+
+@inject LocationObjectStore locationObjectStore
+@inject NavigationManager navigationManager
+@code{
+    Location location = new();
+    async Task FormSubmitted(EditContext editContext)
+    {
+        await locationObjectStore.Add(location);
+        navigationManager.NavigateTo("/locations");
+    }
+}
