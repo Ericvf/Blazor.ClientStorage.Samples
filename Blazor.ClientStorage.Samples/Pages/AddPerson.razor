@@ -4,11 +4,11 @@
 <EditForm Model="person" OnSubmit="FormSubmitted">
     <div class="form-group">
         <label for="Name">Name</label>
-        <input id="txtDate" type="text" required @bind-value="person.name" />
+        <input type="text" required @bind-value="person.name" />
     </div>
     <div class="form-group">
         <label for="Name">Age</label>
-        <input id="txtDate" type="number" required @bind-value="person.age" />
+        <input type="number" required @bind-value="person.age" />
     </div>
 
     <input type="submit" class="btn btn-primary" value="Save" />
